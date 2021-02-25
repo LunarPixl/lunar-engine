@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <core/state_base.hpp>
+#include <core/state_machine.hpp>
 #include <chrono>
 
 namespace lunar::core {
