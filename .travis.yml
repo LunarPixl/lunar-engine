@@ -1,0 +1,42 @@
+dist: focal
+
+language: cpp
+os: linux
+compiler: gcc
+
+addons:
+  apt:
+    packages: lcov libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev
+
+# the install step will take care of deploying a newer cmake version
+install:
+  # first we create a directory for the CMake binaries
+  - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
+  - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
+  # we use wget to fetch the cmake binaries
+  - travis_retry wget --no-check-certificate https://github.com/Kitware/CMake/releases/download/v3.19.6/cmake-3.19.6-Linux-x86_64.tar.gz
+  # extract the binaries; the output here is quite lengthy,
+  # so we swallow it to not clutter up the travis console
+  - tar -xvf cmake-3.19.6-Linux-x86_64.tar.gz > /dev/null
+  - mv cmake-3.19.6-Linux-x86_64 cmake-install
+  # add both the top-level directory and the bin directory from the archive
+  # to the system PATH. By adding it to the front of the path we hide the
+  # preinstalled CMake with our own.
+  - PATH=${DEPS_DIR}/cmake-install:${DEPS_DIR}/cmake-install/bin:$PATH
+  # don't forget to switch back to the main build directory once you are done
+  - cd ${TRAVIS_BUILD_DIR}
+
+script: ./build.sh
+
+after_success:
+# Create lcov report
+# capture coverage info
+- lcov --directory . --capture --output-file coverage.info
+# filter out system and extra files.
+# To also not include test code in coverage add them with full path to the patterns: '*/tests/*'
+- lcov --remove coverage.info '/usr/*' "${HOME}"'/.cache/*' --output-file coverage.info
+# output coverage data for debugging (optional)
+- lcov --list coverage.info
+# Uploading to CodeCov
+# '-f' specifies file(s) to use and disables manual coverage gathering and file search which has already been done above
+- bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
