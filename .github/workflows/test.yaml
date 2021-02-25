@@ -1,0 +1,40 @@
+name: build-action
+
+on: 
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'push' ||
+      github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+        sudo apt-get install -yqq cmake gcc g++ libgl1-mesa-dev libglfw3-dev build-essential
+      - name: build
+        run: |
+        mkdir build && cd build && cmake -G "Unix Makefiles" .. 
+        cmake --build .
+      - name: run test
+        run: ./build/test.out --reporters=junit --out=results.xml
+        
+      - name: Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        # the action is useless on pull_request events
+        # (it can not create check runs or pull request comments)
+        if: always() && github.event_name != 'pull_request'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: "test-results/*.xml"
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          path: test-results/*.xml
