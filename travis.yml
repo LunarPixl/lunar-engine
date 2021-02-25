@@ -4,7 +4,7 @@ compiler: gcc
 
 addons:
   apt:
-    packages: lcovlibgl1-mesa-dev libglfw3-dev build-essential
+    packages: lcovlibgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev
 
 script: ./build.sh
 

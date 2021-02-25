@@ -43,3 +43,7 @@ target_link_libraries(tests PRIVATE doctest::doctest)
 target_include_directories(tests PRIVATE src)
 target_link_libraries(tests PRIVATE lunarengine)
 target_include_directories(tests PRIVATE extern)
+
+enable_testing()
+
+add_test(unit-test tests --reporter=junit --out=test.xml)
