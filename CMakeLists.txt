@@ -55,4 +55,4 @@ target_include_directories(tests PRIVATE extern)
 
 enable_testing()
 
-add_test(unit-test tests --reporter=junit --out=test.xml)
+add_test(unit-test tests --reporters=junit --out=test.xml)
