@@ -6,7 +6,6 @@ addons:
   apt:
     packages: lcovlibgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev
 
-
 script: ./build.sh
 
 after_success:
