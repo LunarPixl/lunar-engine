@@ -9,7 +9,16 @@ pmm(VCPKG REVISION 2020.11 REQUIRES ${VCPKG_IMPORTS})
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(lunarengine src/core/application_base.cpp src/core/application_base.hpp src/core/state_machine.cpp src/core/state_machine.hpp src/core/static_errors.hpp src/core/state_base.hpp)
+add_library(lunarengine
+        src/core/application_base.cpp
+        src/core/application_base.hpp
+        src/core/state_machine.cpp
+        src/core/state_machine.hpp
+        src/core/static_errors.hpp
+        src/core/state_base.hpp
+        src/core/screen.cpp
+        src/core/screen.hpp
+)
 target_include_directories(lunarengine PUBLIC src)
 target_include_directories(lunarengine PUBLIC extern)
 
@@ -34,7 +43,7 @@ target_link_libraries(lunarengine PRIVATE range-v3 range-v3-meta range-v3::meta 
 find_package(spdlog CONFIG REQUIRED)
 target_link_libraries(lunarengine PRIVATE spdlog::spdlog)
 
-add_executable(tests tests/state_machine.test.cpp tests/main.cpp)
+add_executable(tests tests/state_machine.test.cpp tests/main.cpp tests/application_framework.test.cpp)
 target_compile_features(tests PRIVATE cxx_std_20)
 
 find_package(doctest CONFIG REQUIRED)

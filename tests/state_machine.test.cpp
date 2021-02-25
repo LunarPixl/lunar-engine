@@ -1,9 +1,6 @@
 //
-// Created by rapha on 25.02.2021.
+// Created by Raphael Baier on 25.02.2021.
 //
-
-#pragma once
-
 
 #include <core/state_machine.hpp>
 #include <doctest/doctest.h>
