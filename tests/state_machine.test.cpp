@@ -15,6 +15,7 @@ struct TestState : public state_base
     bool was_started;
     bool was_run;
     bool was_stopped;
+    bool user_var;
     SA::delegate<void(StateMachine*)> onStart;
     SA::delegate<void(StateMachine*)> onUpdate;
     SA::delegate<void(StateMachine*)> onStop;
@@ -112,8 +113,6 @@ TEST_CASE("Transition is possible")
     struct s1{};
     struct s2{};
 
-    bool transition_happened = false;
-
     //emplace our test-states
     auto& tss1 = fsm.emplace<TestState<s1>>();
     auto& tss2 = fsm.emplace<TestState<s2>>();
@@ -124,12 +123,10 @@ TEST_CASE("Transition is possible")
     };
 
     //on transition make sure that all the variables are correct
-    fsm.onTransition += [&](auto* fsm, auto current, auto next)
+    fsm.onTransition += [](auto* fsm, auto current, auto next)
     {
-        transition_happened =
-                current == &tss1 &&
-                next == &tss2;
-
+        reinterpret_cast<TestState<s1>*>(current)->user_var = true;
+        reinterpret_cast<TestState<s2>*>(next)->user_var = true;
         //also stop the fsm otherwise we never finish
         fsm->stop();
     };
@@ -138,7 +135,9 @@ TEST_CASE("Transition is possible")
     fsm.run(typeid(TestState<s1>));
 
     //check the results
-    CHECK_EQ(transition_happened, true);
+    CHECK_EQ(tss1.user_var, true);
+    CHECK_EQ(tss2.user_var, true);
+
     CHECK_EQ(fsm.current(),&tss2);
 
 }
