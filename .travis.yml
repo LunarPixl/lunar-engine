@@ -8,6 +8,11 @@ addons:
   apt:
     packages: lcov libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev
 
+cache:
+  directories:
+    - $HOME/.cache
+    - $HOME/pmm
+
 # the install step will take care of deploying a newer cmake version
 install:
   # first we create a directory for the CMake binaries
