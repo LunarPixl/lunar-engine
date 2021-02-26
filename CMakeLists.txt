@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 project(lunarengine)
 
-
-
 # Setup Pmm and get deps
 include(pmm.cmake)
 list(APPEND VCPKG_IMPORTS glfw3 glad entt imgui doctest spdlog range-v3 cereal)
