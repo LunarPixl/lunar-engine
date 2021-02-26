@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 project(lunarengine)
 
-
-
 # Setup Pmm and get deps
 include(pmm.cmake)
 list(APPEND VCPKG_IMPORTS glfw3 glad entt imgui doctest spdlog range-v3 cereal)
@@ -61,6 +59,14 @@ if(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
             )
 
     target_link_options(tests INTERFACE --coverage)
+    # Add required flags (GCC & LLVM/Clang)
+    target_compile_options(lunarengine INTERFACE
+            -O0        # no optimization
+            -g         # generate debug info
+            --coverage # sets all required flags
+            )
+
+    target_link_options(lunarengine INTERFACE --coverage)
 endif(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
 
 target_compile_features(tests PRIVATE cxx_std_20)

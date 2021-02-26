@@ -20,7 +20,6 @@ struct TestState : public state_base
     SA::delegate<void(StateMachine*)> onUpdate;
     SA::delegate<void(StateMachine*)> onStop;
 
-
     id dummy_;
 
     void start() override {
@@ -45,8 +44,6 @@ struct TestState : public state_base
     }
 };
 
-
-
 TEST_CASE("Placement is possible")
 {
     StateMachine fsm;
@@ -69,7 +66,6 @@ TEST_CASE("Placement is possible")
 
     //make sure that current is not nullptr
     CHECK_NE(fsm.current(),nullptr);
-
 }
 
 TEST_CASE("Transition is possible")
@@ -77,8 +73,6 @@ TEST_CASE("Transition is possible")
     StateMachine fsm;
     struct s1{};
     struct s2{};
-
-
 
     //emplace our test-states
     auto& tss1 = fsm.emplace<TestState<s1>>();
@@ -93,7 +87,6 @@ TEST_CASE("Transition is possible")
         fsm->stop();
     };
 
-
     //run the fsm
     fsm.run(typeid(TestState<s1>));
 
@@ -104,7 +97,6 @@ TEST_CASE("Transition is possible")
     CHECK_EQ(tss2.was_started, true);
     CHECK_EQ(tss2.was_run, true);
     CHECK_EQ(tss2.was_stopped, true);
-
 }
 
 TEST_CASE("Transition is possible")
@@ -137,9 +129,7 @@ TEST_CASE("Transition is possible")
     //check the results
     CHECK_EQ(tss1.user_var, true);
     CHECK_EQ(tss2.user_var, true);
-
     CHECK_EQ(fsm.current(),&tss2);
-
 }
 
 
