@@ -42,10 +42,10 @@ jobs:
         if: always() && github.event_name != 'pull_request'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: "build/results.xml"
+          files: "results.xml"
 
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          path: build/results.xml
+          path: results.xml
