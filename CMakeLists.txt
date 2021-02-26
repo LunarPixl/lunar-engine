@@ -81,4 +81,3 @@ target_include_directories(tests PRIVATE extern)
 #make test
 enable_testing()
 add_test(unit-test tests --reporters=junit --out=test.xml)
-

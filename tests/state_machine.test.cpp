@@ -129,7 +129,6 @@ TEST_CASE("Transition is possible")
     //check the results
     CHECK_EQ(tss1.user_var, true);
     CHECK_EQ(tss2.user_var, true);
-
     CHECK_EQ(fsm.current(),&tss2);
 }
 
