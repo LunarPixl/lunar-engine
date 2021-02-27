@@ -1,0 +1,25 @@
+
+.. _program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_application_base.hpp:
+
+Program Listing for File application_base.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_lunar-engine_lunar-engine_src_core_application_base.hpp>` (``/home/runner/work/lunar-engine/lunar-engine/src/core/application_base.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by Raphael Baier on 25.02.2021.
+   //
+   #pragma once
+   
+   namespace lunar::core {
+   
+   class ApplicationBase {
+   
+   };
+   
+   
+   }

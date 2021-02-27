@@ -1,0 +1,16 @@
+.. _exhale_class_classlunar_1_1core_1_1_state_machine:
+
+Class StateMachine
+==================
+
+- Defined in :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: lunar::core::StateMachine
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Listing for File state_machine.hpp &#8212; LunarEngine v 0.1.0 alpha documentation</title>
+    <link rel="stylesheet" href="../_static/nameko.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Lora:400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  </head><body>
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">LunarEngine v 0.1.0 alpha documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Program Listing for File state_machine.hpp</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="program-listing-for-file-state-machine-hpp">
+<span id="program-listing-file-home-runner-work-lunar-engine-lunar-engine-src-core-state-machine-hpp"></span><h1>Program Listing for File state_machine.hpp<a class="headerlink" href="#program-listing-for-file-state-machine-hpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp.html#file-home-runner-work-lunar-engine-lunar-engine-src-core-state-machine-hpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/home/runner/work/lunar-engine/lunar-engine/src/core/state_machine.hpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>//
+// Created by rapha on 25.02.2021.
+//
+
+#pragma once
+#define STATEMACHINE_DEFINED
+
+#include &lt;core/static_errors.hpp&gt;
+#include &lt;core/state_base.hpp&gt;
+#include &lt;unordered_map&gt;
+#include &lt;typeindex&gt;
+#include &lt;memory&gt;
+#include &lt;impfast_delegate/delegate.h&gt;
+#include &lt;impfast_delegate/multi_cast_delegate.h&gt;
+#include &lt;hedley.h&gt;
+
+namespace lunar::core {
+
+class StateMachine {
+
+public:
+
+    template &lt;class To&gt;
+    void transition() noexcept {
+        SE_MUST_INHERIT_FROM(To,state_base);
+        transition(typeid(To));
+    }
+
+    void transition(std::type_index type) noexcept;
+
+    template &lt;class State, class ... Args&gt;
+    State&amp; emplace(Args&amp;&amp; ... args)
+    {
+        SE_MUST_INHERIT_FROM(State,state_base);
+        return static_cast&lt;State&amp;&gt;(insert(typeid(State),std::make_unique&lt;State&gt;(std::forward&lt;Args&gt;(args)...)));
+    }
+
+    template &lt;class State&gt;
+    State&amp; insert(std::unique_ptr&lt;State&gt; s){
+        SE_MUST_INHERIT_FROM(State,state_base);
+        return static_cast&lt;State&amp;&gt;(insert(typeid(State),std::unique_ptr&lt;state_base&gt;(static_cast&lt;state_base*&gt;(s.release()))));
+    }
+
+
+    state_base&amp; insert(std::type_index index,std::unique_ptr&lt;state_base&gt; state) noexcept;
+
+    void run(std::type_index start);
+
+    SA::multicast_delegate&lt;void(StateMachine*)&gt; onUpdate;
+
+     SA::multicast_delegate&lt;void(StateMachine*,state_base* current,state_base* next)&gt; onTransition;
+
+    HEDLEY_WARN_UNUSED_RESULT const state_base* current() const noexcept;
+
+    HEDLEY_WARN_UNUSED_RESULT const state_base* next() const noexcept;
+
+    void stop();
+
+private:
+
+    void validate_index(std::type_index) const noexcept;
+
+    enum class FsmState {
+        RUNNING,
+        TRANSITION,
+        ENDING
+    };
+
+    FsmState m_state = FsmState::ENDING;
+    state_base* m_current = nullptr;
+    state_base* m_next = nullptr;
+    std::unordered_map&lt;std::type_index,std::unique_ptr&lt;state_base&gt;&gt; m_state_registry;
+};
+}
+</pre></div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation index</a><ul>
+  </ul></li>
+</ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+  </body>
+</html>

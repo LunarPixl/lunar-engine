@@ -1,0 +1,21 @@
+
+.. _program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_static_errors.hpp:
+
+Program Listing for File static_errors.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_lunar-engine_lunar-engine_src_core_static_errors.hpp>` (``/home/runner/work/lunar-engine/lunar-engine/src/core/static_errors.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by rapha on 25.02.2021.
+   //
+   
+   #pragma once
+   
+   #include <type_traits>
+   
+   #define SE_MUST_INHERIT_FROM(Test,Base) static_assert(std::is_base_of_v<Base, typename std::decay<Test>::type>, "static_assertion failed! " #Test " must inherit from " #Base)

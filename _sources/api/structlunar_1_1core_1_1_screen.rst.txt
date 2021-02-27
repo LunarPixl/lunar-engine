@@ -1,0 +1,25 @@
+.. _exhale_struct_structlunar_1_1core_1_1_screen:
+
+Struct Screen
+=============
+
+- Defined in :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_screen.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public lunar::core::state_base`` (:ref:`exhale_struct_structlunar_1_1core_1_1state__base`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: lunar::core::Screen
+   :members:
+   :protected-members:
+   :undoc-members:

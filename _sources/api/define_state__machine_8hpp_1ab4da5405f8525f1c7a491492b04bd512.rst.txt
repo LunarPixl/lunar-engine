@@ -1,0 +1,13 @@
+.. _exhale_define_state__machine_8hpp_1ab4da5405f8525f1c7a491492b04bd512:
+
+Define STATEMACHINE_DEFINED
+===========================
+
+- Defined in :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: STATEMACHINE_DEFINED

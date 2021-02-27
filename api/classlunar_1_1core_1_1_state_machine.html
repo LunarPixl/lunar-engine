@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class StateMachine &#8212; LunarEngine v 0.1.0 alpha documentation</title>
+    <link rel="stylesheet" href="../_static/nameko.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Define STATEMACHINE_DEFINED" href="define_state__machine_8hpp_1ab4da5405f8525f1c7a491492b04bd512.html" />
+    <link rel="prev" title="Class ApplicationBase" href="classlunar_1_1core_1_1_application_base.html" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Lora:400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  </head><body>
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="define_state__machine_8hpp_1ab4da5405f8525f1c7a491492b04bd512.html" title="Define STATEMACHINE_DEFINED"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="classlunar_1_1core_1_1_application_base.html" title="Class ApplicationBase"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">LunarEngine v 0.1.0 alpha documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="library_root.html" accesskey="U">Legion API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Class StateMachine</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="class-statemachine">
+<span id="exhale-class-classlunar-1-1core-1-1-state-machine"></span><h1>Class StateMachine<a class="headerlink" href="#class-statemachine" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp.html#file-home-runner-work-lunar-engine-lunar-engine-src-core-state-machine-hpp"><span class="std std-ref">File state_machine.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N5lunar4core12StateMachineE">
+<span id="_CPPv3N5lunar4core12StateMachineE"></span><span id="_CPPv2N5lunar4core12StateMachineE"></span><span id="lunar::core::StateMachine"></span><span class="target" id="classlunar_1_1core_1_1_state_machine"></span><em class="property">class </em><code class="sig-prename descclassname">lunar::core<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">StateMachine</code><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachineE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4I0EN5lunar4core12StateMachine10transitionEvv">
+<span id="_CPPv3I0EN5lunar4core12StateMachine10transitionEv"></span><span id="_CPPv2I0EN5lunar4core12StateMachine10transitionEv"></span>template&lt;class <code class="sig-name descname">To</code>&gt;<br /><span class="target" id="classlunar_1_1core_1_1_state_machine_1a7e712fca2ee0bf90ce1e42597025f686"></span><em class="property">inline</em> void <code class="sig-name descname">transition</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN5lunar4core12StateMachine10transitionEvv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transitions to a new State in the FSM. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">To</span></code>: the type of the state you want to transition to </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N5lunar4core12StateMachine10transitionENSt10type_indexE">
+<span id="_CPPv3N5lunar4core12StateMachine10transitionENSt10type_indexE"></span><span id="_CPPv2N5lunar4core12StateMachine10transitionENSt10type_indexE"></span><span id="lunar::core::StateMachine::transition__std::type_index"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a73e773f8e1db81ea28bd76ea1d5deb2b"></span>void <code class="sig-name descname">transition</code><span class="sig-paren">(</span>std::type_index <em>type</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine10transitionENSt10type_indexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transitions to a new State in the FSM. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: the typeid of the state you want to transition to </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args">
+<span id="_CPPv3I0DpEN5lunar4core12StateMachine7emplaceEDpRR4Args"></span><span id="_CPPv2I0DpEN5lunar4core12StateMachine7emplaceEDpRR4Args"></span>template&lt;class <code class="sig-name descname">State</code>, class ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classlunar_1_1core_1_1_state_machine_1aba422451ea0d6c81921f0b5006a61a73"></span><em class="property">inline</em> <a class="reference internal" href="#_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args" title="lunar::core::StateMachine::emplace::State">State</a> &amp;<code class="sig-name descname">emplace</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args" title="lunar::core::StateMachine::emplace::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>placement-creates a new state in the registry </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">State</span></code>: the type of the State you want to insert, must inherit from StateBase </p></li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE">
+<span id="_CPPv3I0EN5lunar4core12StateMachine6insertENSt10unique_ptrI5StateEE"></span><span id="_CPPv2I0EN5lunar4core12StateMachine6insertENSt10unique_ptrI5StateEE"></span>template&lt;class <code class="sig-name descname">State</code>&gt;<br /><span class="target" id="classlunar_1_1core_1_1_state_machine_1a392d2d3185527ccb44f1a855a880821c"></span><em class="property">inline</em> <a class="reference internal" href="#_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE" title="lunar::core::StateMachine::insert::State">State</a> &amp;<code class="sig-name descname">insert</code><span class="sig-paren">(</span>std::unique_ptr&lt;<a class="reference internal" href="#_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE" title="lunar::core::StateMachine::insert::State">State</a>&gt; <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inserts a new State into the FSM. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">State</span></code>: the type of the State you want to insert, must inherit from StateBase </p></li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code>: the State you want to insert </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE">
+<span id="_CPPv3N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE"></span><span id="_CPPv2N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE"></span><span id="lunar::core::StateMachine::insert__std::type_index.std::unique_ptr:state_base:"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a54f20c1e1e75ac89a5534c1beb3bba08"></span><a class="reference internal" href="structlunar_1_1core_1_1state__base.html#_CPPv4N5lunar4core10state_baseE" title="lunar::core::state_base">state_base</a> &amp;<code class="sig-name descname">insert</code><span class="sig-paren">(</span>std::type_index <em>index</em>, std::unique_ptr&lt;<a class="reference internal" href="structlunar_1_1core_1_1state__base.html#_CPPv4N5lunar4core10state_baseE" title="lunar::core::state_base">state_base</a>&gt; <em>state</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inserts a new State into the FSM by typename &amp; ptr combo. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: the typeid of the State you want to insert </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state</span></code>: a pointer to the state you want to insert </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N5lunar4core12StateMachine3runENSt10type_indexE">
+<span id="_CPPv3N5lunar4core12StateMachine3runENSt10type_indexE"></span><span id="_CPPv2N5lunar4core12StateMachine3runENSt10type_indexE"></span><span id="lunar::core::StateMachine::run__std::type_index"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a647f1910a6925d21f36d63e0c1510181"></span>void <code class="sig-name descname">run</code><span class="sig-paren">(</span>std::type_index <em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine3runENSt10type_indexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>starts the fsm </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: the initial state </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+<span class="target" id="classlunar_1_1core_1_1_state_machine_1acab98594ecaea48224fef288c842176f"></span><code class="sig-name descname">HEDLEY_WARN_UNUSED_RESULT const state_base * current () const noexcept</code></dt>
+<dd><p>gets a pointer to the current state </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+<span class="target" id="classlunar_1_1core_1_1_state_machine_1a16e11d16b5a75cbb265852425634a98e"></span><code class="sig-name descname">HEDLEY_WARN_UNUSED_RESULT const state_base * next () const noexcept</code></dt>
+<dd><p>gets a pointer to the next state </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N5lunar4core12StateMachine4stopEv">
+<span id="_CPPv3N5lunar4core12StateMachine4stopEv"></span><span id="_CPPv2N5lunar4core12StateMachine4stopEv"></span><span id="lunar::core::StateMachine::stop"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1aefef9a9df1ad13474df88b5b00b3bb94"></span>void <code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N5lunar4core12StateMachine8onUpdateE">
+<span id="_CPPv3N5lunar4core12StateMachine8onUpdateE"></span><span id="_CPPv2N5lunar4core12StateMachine8onUpdateE"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a2201d5fa545d50c20ce2c38d3e1e3b94"></span>SA::multicast_delegate&lt;void<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5lunar4core12StateMachineE" title="lunar::core::StateMachine">StateMachine</a>*<span class="sig-paren">)</span>&gt; <code class="sig-name descname">onUpdate</code><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine8onUpdateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>is run on every update tick </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N5lunar4core12StateMachine12onTransitionE">
+<span id="_CPPv3N5lunar4core12StateMachine12onTransitionE"></span><span id="_CPPv2N5lunar4core12StateMachine12onTransitionE"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a1386061ec91ffd36baf26844f46f1a2d"></span>SA::multicast_delegate&lt;void<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5lunar4core12StateMachineE" title="lunar::core::StateMachine">StateMachine</a>*, <a class="reference internal" href="structlunar_1_1core_1_1state__base.html#_CPPv4N5lunar4core10state_baseE" title="lunar::core::state_base">state_base</a> *current, <a class="reference internal" href="structlunar_1_1core_1_1state__base.html#_CPPv4N5lunar4core10state_baseE" title="lunar::core::state_base">state_base</a> *next<span class="sig-paren">)</span>&gt; <code class="sig-name descname">onTransition</code><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine12onTransitionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>is run when a state transition occurs </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Class StateMachine</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation index</a><ul>
+  <li><a href="library_root.html">Legion API</a><ul>
+      <li>Previous: <a href="classlunar_1_1core_1_1_application_base.html" title="previous chapter">Class ApplicationBase</a></li>
+      <li>Next: <a href="define_state__machine_8hpp_1ab4da5405f8525f1c7a491492b04bd512.html" title="next chapter">Define STATEMACHINE_DEFINED</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/classlunar_1_1core_1_1_state_machine.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+  </body>
+</html>

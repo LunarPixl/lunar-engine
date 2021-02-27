@@ -1,0 +1,55 @@
+
+.. _program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_screen.cpp:
+
+Program Listing for File screen.cpp
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_lunar-engine_lunar-engine_src_core_screen.cpp>` (``/home/runner/work/lunar-engine/lunar-engine/src/core/screen.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by rapha on 25.02.2021.
+   //
+   
+   #include "screen.hpp"
+   
+   void lunar::core::Screen::start() {
+       early_setup();
+       setup();
+       late_setup();
+   }
+   
+   void lunar::core::Screen::update() {
+       using clk = std::chrono::high_resolution_clock;
+   
+       static float acc;
+   
+       static clk::time_point last = clk::now();
+       clk::time_point now = clk::now();
+       float delta = std::chrono::duration<float>(last - now).count();
+       last = now;
+   
+       const float fixed_dt = 0.001f;
+   
+       acc += delta;
+   
+       while(acc >= fixed_dt)
+       {
+           acc -= fixed_dt;
+           fixed_update(fixed_dt);
+       }
+   
+       early_update(delta);
+       update(delta);
+       late_update(delta);
+   
+   }
+   
+   void lunar::core::Screen::stop() {
+       early_shutdown();
+       shutdown();
+       late_shutdown();
+   }

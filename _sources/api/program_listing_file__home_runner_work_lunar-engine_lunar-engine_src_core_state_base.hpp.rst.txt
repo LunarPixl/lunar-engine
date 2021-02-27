@@ -1,0 +1,36 @@
+
+.. _program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_state_base.hpp:
+
+Program Listing for File state_base.hpp
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_lunar-engine_lunar-engine_src_core_state_base.hpp>` (``/home/runner/work/lunar-engine/lunar-engine/src/core/state_base.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by rapha on 25.02.2021.
+   //
+   
+   #pragma once
+   #ifndef STATEMACHINE_DEFINED
+   #error This cannot be included directly, include state_machine.hpp
+   #endif
+   
+   
+   namespace lunar::core {
+   class StateMachine;
+   
+   struct state_base {
+       virtual void start() {}
+       virtual void update() {}
+       virtual void stop() {}
+   
+       StateMachine * fsm;
+   
+   };
+   }
+   
+   

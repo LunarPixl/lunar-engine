@@ -1,0 +1,86 @@
+
+.. _program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp:
+
+Program Listing for File state_machine.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp>` (``/home/runner/work/lunar-engine/lunar-engine/src/core/state_machine.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by rapha on 25.02.2021.
+   //
+   
+   #pragma once
+   #define STATEMACHINE_DEFINED
+   
+   #include <core/static_errors.hpp>
+   #include <core/state_base.hpp>
+   #include <unordered_map>
+   #include <typeindex>
+   #include <memory>
+   #include <impfast_delegate/delegate.h>
+   #include <impfast_delegate/multi_cast_delegate.h>
+   #include <hedley.h>
+   
+   namespace lunar::core {
+   
+   class StateMachine {
+   
+   public:
+   
+       template <class To>
+       void transition() noexcept {
+           SE_MUST_INHERIT_FROM(To,state_base);
+           transition(typeid(To));
+       }
+   
+       void transition(std::type_index type) noexcept;
+   
+       template <class State, class ... Args>
+       State& emplace(Args&& ... args)
+       {
+           SE_MUST_INHERIT_FROM(State,state_base);
+           return static_cast<State&>(insert(typeid(State),std::make_unique<State>(std::forward<Args>(args)...)));
+       }
+   
+       template <class State>
+       State& insert(std::unique_ptr<State> s){
+           SE_MUST_INHERIT_FROM(State,state_base);
+           return static_cast<State&>(insert(typeid(State),std::unique_ptr<state_base>(static_cast<state_base*>(s.release()))));
+       }
+   
+   
+       state_base& insert(std::type_index index,std::unique_ptr<state_base> state) noexcept;
+   
+       void run(std::type_index start);
+   
+       SA::multicast_delegate<void(StateMachine*)> onUpdate;
+   
+        SA::multicast_delegate<void(StateMachine*,state_base* current,state_base* next)> onTransition;
+   
+       HEDLEY_WARN_UNUSED_RESULT const state_base* current() const noexcept;
+   
+       HEDLEY_WARN_UNUSED_RESULT const state_base* next() const noexcept;
+   
+       void stop();
+   
+   private:
+   
+       void validate_index(std::type_index) const noexcept;
+   
+       enum class FsmState {
+           RUNNING,
+           TRANSITION,
+           ENDING
+       };
+   
+       FsmState m_state = FsmState::ENDING;
+       state_base* m_current = nullptr;
+       state_base* m_next = nullptr;
+       std::unordered_map<std::type_index,std::unique_ptr<state_base>> m_state_registry;
+   };
+   }

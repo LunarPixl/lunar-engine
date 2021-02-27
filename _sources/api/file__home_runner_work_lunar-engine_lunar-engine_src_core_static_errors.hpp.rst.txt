@@ -1,0 +1,43 @@
+
+.. _file__home_runner_work_lunar-engine_lunar-engine_src_core_static_errors.hpp:
+
+File static_errors.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_lunar-engine_lunar-engine_src_core>` (``/home/runner/work/lunar-engine/lunar-engine/src/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/runner/work/lunar-engine/lunar-engine/src/core/static_errors.hpp``)
+---------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_static_errors.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``type_traits``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_state_machine.hpp`
+
+
+
