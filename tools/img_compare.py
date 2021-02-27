@@ -16,15 +16,14 @@ import sys
 if __name__ == '__main__':
     args = docopt(__doc__, version='img_compare 0.1.0')
 
-    lhs = cv2.imread(args['<lhs>'], 0)
-    rhs = cv2.imread(args['<rhs>'], 0)
+    lhs = cv2.imread(args['<lhs>'])
+    rhs = cv2.imread(args['<rhs>'])
 
     res = cv2.absdiff(lhs, rhs)
 
     res = res.astype(np.uint8)
 
-    print()
-    percentage = 100 - (res.mean(axis=0).mean(axis=0) / 255 * 100)
+    percentage = 100 - (res.mean(axis=0).mean(axis=0).mean(axis=0) / 255 * 100)
 
     min_match = int(args['<min_match>'])
 
