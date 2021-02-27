@@ -8,10 +8,6 @@ pmm(VCPKG REVISION 2020.11 REQUIRES ${VCPKG_IMPORTS})
 
 # Set CPP version
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_CPPCHECK "cppcheck")
-
-#does not find includes for some reason
-#set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=-*,readability-*)
 
 #setup lunarengine
 add_library(lunarengine
