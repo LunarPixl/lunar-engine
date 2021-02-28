@@ -50,7 +50,7 @@ exhale_args = {
 
     "containmentFolder": "./api",
     "rootFileName": "library_root.rst",
-    "rootFileTitle": "Legion API",
+    "rootFileTitle": "Lunar API",
     "doxygenStripFromPath": "..",
     "createTreeView": True,
 }

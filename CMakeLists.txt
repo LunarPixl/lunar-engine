@@ -26,27 +26,27 @@ target_include_directories(lunarengine PUBLIC src)
 target_include_directories(lunarengine PUBLIC extern)
 
 find_package(cereal CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE cereal)
+target_link_libraries(lunarengine PUBLIC cereal)
 
 find_package(EnTT CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE EnTT::EnTT)
+target_link_libraries(lunarengine PUBLIC EnTT::EnTT)
 
 find_package(glad CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE glad::glad)
+target_link_libraries(lunarengine PUBLIC glad::glad)
 
 find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE glfw)
+target_link_libraries(lunarengine PUBLIC glfw)
 
 find_package(imgui CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE imgui::imgui)
+target_link_libraries(lunarengine PUBLIC imgui::imgui)
 
 find_package(range-v3 CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE range-v3 range-v3-meta range-v3::meta range-v3-concepts)
+target_link_libraries(lunarengine PUBLIC range-v3 range-v3-meta range-v3::meta range-v3-concepts)
 
 find_package(spdlog CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE spdlog::spdlog)
+target_link_libraries(lunarengine PUBLIC spdlog::spdlog)
 
-add_executable(tests tests/state_machine.test.cpp tests/main.cpp tests/application_framework.test.cpp)
+add_executable(tests tests/state_machine.test.cpp tests/main.cpp tests/application_framework.test.cpp tests/offscreen_render.test.cpp tests/invoke_external.hpp)
 
 # Setup coverage
 option(CODE_COVERAGE "Enable coverage reporting" OFF)

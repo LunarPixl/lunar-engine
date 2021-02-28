@@ -23,6 +23,7 @@ struct TestState : public state_base
     id dummy_;
 
     void start() override {
+        state_base::start();
         if(!onStart.isNull())
             onStart(fsm);
 
@@ -30,6 +31,7 @@ struct TestState : public state_base
     }
 
     void update() override {
+        state_base::update();
         if(!onUpdate.isNull())
             onUpdate(fsm);
 
@@ -37,6 +39,7 @@ struct TestState : public state_base
     }
 
     void stop() override {
+        state_base::stop();
         if(!onStop.isNull())
             onStop(fsm);
 
