@@ -18,7 +18,7 @@
 #pragma once
 #include "delegate_base.h"
 
-namespace SA {
+namespace lunar {
 
 	template <typename T> class delegate;
 	template <typename T> class multicast_delegate;

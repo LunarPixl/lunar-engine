@@ -76,12 +76,12 @@ public:
     /**
      * @brief is run on every update tick
      */
-    SA::multicast_delegate<void(StateMachine*)> onUpdate;
+     multicast_delegate<void(StateMachine*)> onUpdate;
 
     /**
      * @brief is run when a state transition occurs
      */
-     SA::multicast_delegate<void(StateMachine*,state_base* current,state_base* next)> onTransition;
+     multicast_delegate<void(StateMachine*,state_base* current,state_base* next)> onTransition;
 
     /**
      * @brief gets a pointer to the current state
