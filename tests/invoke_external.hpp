@@ -17,8 +17,6 @@ static constexpr int ERROR_PROGRAM_EXECUTION_FAILED = 127;
 #if _WIN32
 #define WIN32_LEAN_AND_MEAN
 
-
-
 #include <Windows.h>
 
 inline tl::expected<int,std::runtime_error> invoke_external(const std::string& cmd)

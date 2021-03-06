@@ -2,6 +2,7 @@
 #include <doctest/doctest.h>
 #if defined(_WIN32)
 #include <windows.h>
+#include <spdlog/spdlog.h>
 #endif
 
 #include <glad/glad.h>
@@ -14,8 +15,14 @@
 
 #include "invoke_external.hpp"
 
+void error_callback(int code ,const char* message)
+{
+   spdlog::error("[ c{} ] {}",code,message);
+}
+
 TEST_CASE("GLFW can open a hidden window")
 {
+   glfwSetErrorCallback(&error_callback);
    CHECK_EQ(glfwInit(),GLFW_TRUE);
 
    glfwWindowHint(GLFW_VISIBLE,GLFW_FALSE);
@@ -34,6 +41,7 @@ TEST_CASE("GLFW can open a hidden window")
 
 TEST_CASE("GLAD can open a context in a hidden window")
 {
+    glfwSetErrorCallback(&error_callback);
     glfwInit();
     glfwWindowHint(GLFW_VISIBLE,GLFW_FALSE);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,3);
@@ -74,6 +82,7 @@ static void create_ppm(const std::string& prefix, int frame_id, unsigned int wid
 
 TEST_CASE("OpenGL can render a triangle")
 {
+    glfwSetErrorCallback(&error_callback);
     glfwInit();
     glfwWindowHint(GLFW_VISIBLE,GLFW_FALSE);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,4);
