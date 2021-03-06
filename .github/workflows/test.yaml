@@ -22,7 +22,7 @@ jobs:
 
       - name: install dependencies
         run: |
-          sudo apt-get install -yqq cmake gcc g++ libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev xserver-xorg xserver-xorg-core x11-apps x11-xserver-utils
+          sudo apt-get install -yqq cmake gcc g++ libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev xserver-xorg xserver-xorg-core x11-apps x11-xserver-utils xvfb
 
       - name: build
         run: |
@@ -30,7 +30,10 @@ jobs:
           cmake --build .
 
       - name: run test
-        run: export DISPLAY=:0  && ./build/tests --reporters=junit --out=results.xml
+        run: |
+          Xvfb :99 &
+          export DISPLAY=:99
+          ./build/tests --reporters=junit --out=results.xml
         
       - name: Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
