@@ -17,6 +17,8 @@ Files
 
 - :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_application_base.cpp`
 - :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_application_base.hpp`
+- :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.cpp`
+- :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.hpp`
 - :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_screen.cpp`
 - :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_screen.hpp`
 - :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_state_base.hpp`

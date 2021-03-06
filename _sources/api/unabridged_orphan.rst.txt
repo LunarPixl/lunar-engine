@@ -35,6 +35,16 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file__home_runner_work_lunar-engine_lunar-engine_src_core_screen.cpp.rst
 
 .. toctree::

@@ -94,9 +94,9 @@ public:
 
     void run(std::type_index start);
 
-    SA::multicast_delegate&lt;void(StateMachine*)&gt; onUpdate;
+     multicast_delegate&lt;void(StateMachine*)&gt; onUpdate;
 
-     SA::multicast_delegate&lt;void(StateMachine*,state_base* current,state_base* next)&gt; onTransition;
+     multicast_delegate&lt;void(StateMachine*,state_base* current,state_base* next)&gt; onTransition;
 
     HEDLEY_WARN_UNUSED_RESULT const state_base* current() const noexcept;
 

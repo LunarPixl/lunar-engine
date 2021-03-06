@@ -23,4 +23,6 @@ Classes
 
 - :ref:`exhale_class_classlunar_1_1core_1_1_application_base`
 
+- :ref:`exhale_class_classlunar_1_1core_1_1_event_bus`
+
 - :ref:`exhale_class_classlunar_1_1core_1_1_state_machine`

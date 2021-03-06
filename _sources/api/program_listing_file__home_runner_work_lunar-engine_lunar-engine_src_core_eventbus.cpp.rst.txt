@@ -1,0 +1,27 @@
+
+.. _program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.cpp:
+
+Program Listing for File eventbus.cpp
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.cpp>` (``/home/runner/work/lunar-engine/lunar-engine/src/core/eventbus.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #include <core/eventbus.hpp>
+   
+   namespace lunar::core {
+       void EventBus::publish(std::type_index index, void *ptr) {
+           if(auto itr = m_handlers.find(index); itr != m_handlers.end())
+           {
+               std::invoke(itr->second,ptr);
+           }
+       }
+   
+       void EventBus::consume(std::type_index index, const delegate<void(void *)> &callback) {
+           m_handlers[index] += callback;
+       }
+   }

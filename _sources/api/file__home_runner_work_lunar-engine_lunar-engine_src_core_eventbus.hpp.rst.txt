@@ -1,0 +1,63 @@
+
+.. _file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.hpp:
+
+File eventbus.hpp
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_lunar-engine_lunar-engine_src_core>` (``/home/runner/work/lunar-engine/lunar-engine/src/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/runner/work/lunar-engine/lunar-engine/src/core/eventbus.hpp``)
+----------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``impfast_delegate/delegate.h``
+
+- ``impfast_delegate/multi_cast_delegate.h``
+
+- ``typeindex``
+
+- ``unordered_map``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_runner_work_lunar-engine_lunar-engine_src_core_eventbus.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_lunar__core`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classlunar_1_1core_1_1_event_bus`
+
