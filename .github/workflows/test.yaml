@@ -22,7 +22,7 @@ jobs:
 
       - name: install dependencies
         run: |
-          sudo apt-get install -yqq cmake gcc g++ libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev
+          sudo apt-get install -yqq cmake gcc g++ libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev xserver-xorg xserver-xorg-core x11-apps x11-xserver-utils
 
       - name: build
         run: |
