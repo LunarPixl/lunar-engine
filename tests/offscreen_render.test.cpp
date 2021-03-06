@@ -2,9 +2,9 @@
 #include <doctest/doctest.h>
 #if defined(_WIN32)
 #include <windows.h>
-#include <iostream>
 #endif
 
+#include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <array>
