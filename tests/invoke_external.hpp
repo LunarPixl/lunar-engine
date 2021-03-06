@@ -1,6 +1,7 @@
 #pragma once
 
 #include "expected.hpp"
+#include <cstring>
 
 //
 // Created by Raphael Baier on 27.02.2021.
