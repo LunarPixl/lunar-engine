@@ -19,7 +19,7 @@ add_library(lunarengine
         src/core/state_base.hpp
         src/core/screen.cpp
         src/core/screen.hpp
-)
+        src/core/eventbus.hpp src/core/eventbus.cpp)
 
 #link deps
 target_include_directories(lunarengine PUBLIC src)

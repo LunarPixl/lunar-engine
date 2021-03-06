@@ -16,9 +16,9 @@ struct TestState : public state_base
     bool was_run;
     bool was_stopped;
     bool user_var;
-    SA::delegate<void(StateMachine*)> onStart;
-    SA::delegate<void(StateMachine*)> onUpdate;
-    SA::delegate<void(StateMachine*)> onStop;
+    lunar::delegate<void(StateMachine*)> onStart;
+    lunar::delegate<void(StateMachine*)> onUpdate;
+    lunar::delegate<void(StateMachine*)> onStop;
 
     id dummy_;
 

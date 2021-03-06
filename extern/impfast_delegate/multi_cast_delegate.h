@@ -20,7 +20,7 @@
 #include <list>
 #include <functional>
 
-namespace SA {
+namespace lunar {
 
 	template<typename RET, typename ...PARAMS>
 	class multicast_delegate<RET(PARAMS...)> final : private delegate_base<RET(PARAMS...)> {

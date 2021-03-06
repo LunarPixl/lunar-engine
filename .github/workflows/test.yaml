@@ -9,9 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-20.04
-    if: >
-      github.event_name == 'push' ||
-      github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
     steps:
       - uses: actions/checkout@v2
 
@@ -39,7 +36,7 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v1
         # the action is useless on pull_request events
         # (it can not create check runs or pull request comments)
-        if: always() && github.event_name != 'pull_request'
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: "results.xml"
