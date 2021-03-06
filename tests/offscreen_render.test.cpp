@@ -2,7 +2,7 @@
 #include <doctest/doctest.h>
 #if defined(_WIN32)
 #include <windows.h>
-#include <spdlog/spdlog.h>
+#include <iostream>
 #endif
 
 #include <glad/glad.h>
@@ -17,7 +17,7 @@
 
 void error_callback(int code ,const char* message)
 {
-   spdlog::error("[ c{} ] {}",code,message);
+    std::cerr << "[ c" << code << " ] " << message << std::endl;
 }
 
 TEST_CASE("GLFW can open a hidden window")
