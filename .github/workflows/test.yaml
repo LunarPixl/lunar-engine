@@ -31,9 +31,7 @@ jobs:
 
       - name: run test
         run: |
-          Xvfb :99 &
-          export DISPLAY=:99
-          ./build/tests --reporters=junit --out=results.xml
+          xvfn-run ./build/tests --reporters=junit --out=results.xml
         
       - name: Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
