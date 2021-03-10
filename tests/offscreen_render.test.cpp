@@ -175,7 +175,7 @@ TEST_CASE("OpenGL can render a triangle")
         glfwSwapBuffers(window);
     }
 
-    int rc = invoke_external("tools/img_compare.py capture0.pmm tools/data/sanity.png").value_or(1);
+    int rc = invoke_external("cd tools && poetry run python img_compare.py ../capture0.pmm data/sanity.png").value_or(1);
     CHECK_EQ(rc,0);
 
 
