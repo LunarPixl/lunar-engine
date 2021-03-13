@@ -35,6 +35,7 @@ jobs:
           chmod u+x tools/img_diff.py
           chmod u+x tools/img_crop.py
           pip3 install poetry
+          export PATH=/home/runner/.local/bin:$PATH
           xvfb-run ./build/tests --reporters=junit --out=results.xml
         
       - name: Unit Test Results
