@@ -12,7 +12,7 @@ cmake --build . --config Debug -- -j $(nproc)
 chmod u+x tools/img_compare.py
 chmod u+x tools/img_diff.py
 chmod u+x tools/img_crop.py
-pip install poetry
+pip3 install poetry
 # Test
 xvfb-run ctest -j $(nproc) --output-on-failure -VV
 
