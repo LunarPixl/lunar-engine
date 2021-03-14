@@ -25,9 +25,9 @@ python3 -mvenv "${SCRIPTPATH}/venv"
 #getting real tired of this
 ls -l "${SCRIPTPATH}"
 ls -l "${SCRIPTPATH}/venv"
-ls -l "${SCRIPTPATH}/venv/Scripts"
+ls -l "${SCRIPTPATH}/venv/bin"
 
-"${SCRIPTPATH}/venv/Scripts/pip3" install -r requirements.txt
+"${SCRIPTPATH}/venv/bin/pip" install -r requirements.txt
 # Test
 xvfb-run ctest -j $(nproc) --output-on-failure -VV
 
