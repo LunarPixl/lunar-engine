@@ -12,7 +12,8 @@ cmake --build . --config Debug -- -j $(nproc)
 chmod u+x tools/img_compare.py
 chmod u+x tools/img_diff.py
 chmod u+x tools/img_crop.py
-pip3 install poetry
+python3 -mvenv venv
+./venv/Scripts/pip install -r requirements.txt
 # Test
 xvfb-run ctest -j $(nproc) --output-on-failure -VV
 
