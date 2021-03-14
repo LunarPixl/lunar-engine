@@ -31,12 +31,8 @@ jobs:
 
       - name: run test
         run: |
-          chmod u+x tools/img_compare.py
-          chmod u+x tools/img_diff.py
-          chmod u+x tools/img_crop.py
-          python3 -mvenv venv
-          ./venv/Scripts/pip install -r requirements
-          xvfb-run ./build/tests --reporters=junit --out=results.xml
+          chmod u+x build.sh
+          ./build.sh
         
       - name: Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
