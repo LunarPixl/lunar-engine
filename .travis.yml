@@ -6,7 +6,7 @@ compiler: gcc
 
 addons:
   apt:
-    packages: lcov libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev xserver-xorg xserver-xorg-core x11-apps x11-xserver-utils xvfb python3-pip
+    packages: lcov libgl1-mesa-dev libglfw3-dev build-essential libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev xserver-xorg xserver-xorg-core x11-apps x11-xserver-utils xvfb python3-pip python3-venv
 
 cache:
   directories:
