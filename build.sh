@@ -5,6 +5,7 @@ set -euo pipefail
 mkdir -p build && cd build
 
 cp -R ../tools .
+cp ../requirements.txt .
 
 # Absolute path to this script, e.g. /home/user/bin/foo.sh
 SCRIPT=$(readlink -f "$0")
