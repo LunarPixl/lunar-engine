@@ -19,7 +19,14 @@ cmake --build . --config Debug -- -j $(nproc)
 chmod u+x "${SCRIPTPATH}/tools/img_compare.py"
 chmod u+x "${SCRIPTPATH}/tools/img_diff.py"
 chmod u+x "${SCRIPTPATH}/tools/img_crop.py"
+
 python3 -mvenv "${SCRIPTPATH}/venv"
+
+#getting real tired of this
+ls -l "${SCRIPTPATH}"
+ls -l "${SCRIPTPATH}/venv"
+ls -l "${SCRIPTPATH}/venv/Scripts"
+
 "${SCRIPTPATH}/venv/Scripts/pip3" install -r requirements.txt
 # Test
 xvfb-run ctest -j $(nproc) --output-on-failure -VV
