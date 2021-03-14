@@ -14,9 +14,9 @@ cmake -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug ..
 # Build (for Make on Unix equivalent to `make -j $(nproc)`)
 cmake --build . --config Debug -- -j $(nproc)
 
-chmod u+x tools/img_compare.py
-chmod u+x tools/img_diff.py
-chmod u+x tools/img_crop.py
+chmod u+x "${SCRIPTPATH}/tools/img_compare.py"
+chmod u+x "${SCRIPTPATH}/tools/img_diff.py"
+chmod u+x "${SCRIPTPATH}/tools/img_crop.py"
 python3 -mvenv venv
 "${SCRIPTPATH}/venv/Scripts/pip" install -r requirements.txt
 # Test
