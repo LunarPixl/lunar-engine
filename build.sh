@@ -4,6 +4,8 @@ set -euo pipefail
 
 mkdir -p build && cd build
 
+cp -R ../tools .
+
 # Absolute path to this script, e.g. /home/user/bin/foo.sh
 SCRIPT=$(readlink -f "$0")
 # Absolute path this script is in, thus /home/user/bin
@@ -17,7 +19,7 @@ cmake --build . --config Debug -- -j $(nproc)
 chmod u+x "${SCRIPTPATH}/tools/img_compare.py"
 chmod u+x "${SCRIPTPATH}/tools/img_diff.py"
 chmod u+x "${SCRIPTPATH}/tools/img_crop.py"
-python3 -mvenv venv
+python3 -mvenv "${SCRIPTPATH}/venv"
 "${SCRIPTPATH}/venv/Scripts/pip" install -r requirements.txt
 # Test
 xvfb-run ctest -j $(nproc) --output-on-failure -VV
