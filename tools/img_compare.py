@@ -18,6 +18,9 @@ if __name__ == '__main__':
 
     lhs = cv2.imread(args['<lhs>'])
     rhs = cv2.imread(args['<rhs>'])
+    print(lhs)
+    print(rhs)
+
 
     res = cv2.absdiff(lhs, rhs)
 

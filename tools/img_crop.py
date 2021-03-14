@@ -13,8 +13,7 @@ Options:
 """
 from docopt import docopt
 import cv2
-import numpy as np
-import sys
+
 
 if __name__ == '__main__':
     args = docopt(__doc__, version='img_compare 0.1.0')
