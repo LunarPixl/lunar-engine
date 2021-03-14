@@ -20,7 +20,7 @@ chmod u+x "${SCRIPTPATH}/tools/img_compare.py"
 chmod u+x "${SCRIPTPATH}/tools/img_diff.py"
 chmod u+x "${SCRIPTPATH}/tools/img_crop.py"
 python3 -mvenv "${SCRIPTPATH}/venv"
-"${SCRIPTPATH}/venv/Scripts/pip" install -r requirements.txt
+"${SCRIPTPATH}/venv/Scripts/pip3" install -r requirements.txt
 # Test
 xvfb-run ctest -j $(nproc) --output-on-failure -VV
 
