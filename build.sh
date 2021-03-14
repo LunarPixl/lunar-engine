@@ -4,16 +4,10 @@ set -euo pipefail
 
 mkdir -p build && cd build
 
-WORK_BUILD_DIR=.
-
-if [ -z ${TRAVIS_BUILD_DIR+x}]; then
-    WORK_BUILD_DIR=${TRAVIS_BUILD_DIR};
-fi
-
-if [ -z ${GITHUB_WORKSPACE+x}]; then
-   WORK_BUILD_DIR=${GITHUB_WORKSPACE};
-fi
-
+# Absolute path to this script, e.g. /home/user/bin/foo.sh
+SCRIPT=$(readlink -f "$0")
+# Absolute path this script is in, thus /home/user/bin
+SCRIPTPATH=$(dirname "$SCRIPT")
 
 # Configure
 cmake -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug ..
@@ -24,7 +18,7 @@ chmod u+x tools/img_compare.py
 chmod u+x tools/img_diff.py
 chmod u+x tools/img_crop.py
 python3 -mvenv venv
-"${WORK_BUILD_DIR}/venv/Scripts/pip" install -r requirements.txt
+"${SCRIPTPATH}/venv/Scripts/pip" install -r requirements.txt
 # Test
 xvfb-run ctest -j $(nproc) --output-on-failure -VV
 
