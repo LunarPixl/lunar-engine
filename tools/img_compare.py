@@ -28,8 +28,6 @@ if __name__ == '__main__':
     min_match = int(args['<min_match>'])
 
     if percentage < min_match:
-        print(f"No Match {percentage} required {min_match}")
         sys.exit(1)
 
-    print("Match")
     sys.exit(0)

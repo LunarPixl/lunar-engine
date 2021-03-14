@@ -11,42 +11,41 @@ set(CMAKE_CXX_STANDARD 20)
 
 #setup lunarengine
 add_library(lunarengine
-        src/core/application_base.cpp
-        src/core/application_base.hpp
         src/core/state_machine.cpp
         src/core/state_machine.hpp
         src/core/static_errors.hpp
         src/core/state_base.hpp
         src/core/screen.cpp
         src/core/screen.hpp
-        src/core/eventbus.hpp src/core/eventbus.cpp)
+        src/core/eventbus.hpp
+        src/core/eventbus.cpp)
 
 #link deps
 target_include_directories(lunarengine PUBLIC src)
 target_include_directories(lunarengine PUBLIC extern)
 
-find_package(cereal CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE cereal)
+#find_package(cereal CONFIG REQUIRED)
+#target_link_libraries(lunarengine PUBLIC cereal)
 
-find_package(EnTT CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE EnTT::EnTT)
+#find_package(EnTT CONFIG REQUIRED)
+#target_link_libraries(lunarengine PUBLIC EnTT::EnTT)
 
 find_package(glad CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE glad::glad)
+target_link_libraries(lunarengine PUBLIC glad::glad)
 
 find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE glfw)
+target_link_libraries(lunarengine PUBLIC glfw)
 
-find_package(imgui CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE imgui::imgui)
+#find_package(imgui CONFIG REQUIRED)
+#target_link_libraries(lunarengine PUBLIC imgui::imgui)
 
-find_package(range-v3 CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE range-v3 range-v3-meta range-v3::meta range-v3-concepts)
+#find_package(range-v3 CONFIG REQUIRED)
+#target_link_libraries(lunarengine PUBLIC range-v3 range-v3-meta range-v3::meta range-v3-concepts)
 
 find_package(spdlog CONFIG REQUIRED)
-target_link_libraries(lunarengine PRIVATE spdlog::spdlog)
+target_link_libraries(lunarengine PUBLIC spdlog::spdlog)
 
-add_executable(tests tests/state_machine.test.cpp tests/main.cpp tests/application_framework.test.cpp)
+add_executable(tests tests/state_machine.test.cpp tests/main.cpp tests/application_framework.test.cpp tests/offscreen_render.test.cpp tests/invoke_external.hpp)
 
 # Setup coverage
 option(CODE_COVERAGE "Enable coverage reporting" OFF)
