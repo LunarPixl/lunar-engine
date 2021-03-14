@@ -33,11 +33,6 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
-   classlunar_1_1core_1_1_application_base.rst
-
-.. toctree::
-   :maxdepth: 5
-
    classlunar_1_1core_1_1_event_bus.rst
 
 .. toctree::

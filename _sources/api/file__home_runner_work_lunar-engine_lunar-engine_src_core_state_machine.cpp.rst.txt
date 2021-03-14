@@ -42,5 +42,7 @@ Namespaces
 ----------
 
 
+- :ref:`namespace_lunar`
+
 - :ref:`namespace_lunar__core`
 
