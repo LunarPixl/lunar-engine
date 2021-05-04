@@ -68,87 +68,75 @@
 <dt id="_CPPv4I0EN5lunar4core12StateMachine10transitionEvv">
 <span id="_CPPv3I0EN5lunar4core12StateMachine10transitionEv"></span><span id="_CPPv2I0EN5lunar4core12StateMachine10transitionEv"></span>template&lt;class <code class="sig-name descname">To</code>&gt;<br /><span class="target" id="classlunar_1_1core_1_1_state_machine_1a7e712fca2ee0bf90ce1e42597025f686"></span><em class="property">inline</em> void <code class="sig-name descname">transition</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN5lunar4core12StateMachine10transitionEvv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Transitions to a new State in the FSM. </p>
-<p><dl class="simple">
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">To</span></code>: the type of the state you want to transition to </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><p><strong>To</strong> – the type of the state you want to transition to </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N5lunar4core12StateMachine10transitionENSt10type_indexE">
 <span id="_CPPv3N5lunar4core12StateMachine10transitionENSt10type_indexE"></span><span id="_CPPv2N5lunar4core12StateMachine10transitionENSt10type_indexE"></span><span id="lunar::core::StateMachine::transition__std::type_index"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a73e773f8e1db81ea28bd76ea1d5deb2b"></span>void <code class="sig-name descname">transition</code><span class="sig-paren">(</span>std::type_index <em>type</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine10transitionENSt10type_indexE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Transitions to a new State in the FSM. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: the typeid of the state you want to transition to </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> – the typeid of the state you want to transition to </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args">
 <span id="_CPPv3I0DpEN5lunar4core12StateMachine7emplaceEDpRR4Args"></span><span id="_CPPv2I0DpEN5lunar4core12StateMachine7emplaceEDpRR4Args"></span>template&lt;class <code class="sig-name descname">State</code>, class ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classlunar_1_1core_1_1_state_machine_1aba422451ea0d6c81921f0b5006a61a73"></span><em class="property">inline</em> <a class="reference internal" href="#_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args" title="lunar::core::StateMachine::emplace::State">State</a> &amp;<code class="sig-name descname">emplace</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args" title="lunar::core::StateMachine::emplace::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN5lunar4core12StateMachine7emplaceER5StateDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>placement-creates a new state in the registry </p>
-<p><dl class="simple">
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">State</span></code>: the type of the State you want to insert, must inherit from StateBase </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><p><strong>State</strong> – the type of the State you want to insert, must inherit from StateBase </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: </p></li>
-</ul>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>args</strong> – </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE">
 <span id="_CPPv3I0EN5lunar4core12StateMachine6insertENSt10unique_ptrI5StateEE"></span><span id="_CPPv2I0EN5lunar4core12StateMachine6insertENSt10unique_ptrI5StateEE"></span>template&lt;class <code class="sig-name descname">State</code>&gt;<br /><span class="target" id="classlunar_1_1core_1_1_state_machine_1a392d2d3185527ccb44f1a855a880821c"></span><em class="property">inline</em> <a class="reference internal" href="#_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE" title="lunar::core::StateMachine::insert::State">State</a> &amp;<code class="sig-name descname">insert</code><span class="sig-paren">(</span>std::unique_ptr&lt;<a class="reference internal" href="#_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE" title="lunar::core::StateMachine::insert::State">State</a>&gt; <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN5lunar4core12StateMachine6insertER5StateNSt10unique_ptrI5StateEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Inserts a new State into the FSM. </p>
-<p><dl class="simple">
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">State</span></code>: the type of the State you want to insert, must inherit from StateBase </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters</dt>
+<dd class="field-odd"><p><strong>State</strong> – the type of the State you want to insert, must inherit from StateBase </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code>: the State you want to insert </p></li>
-</ul>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>s</strong> – the State you want to insert </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE">
 <span id="_CPPv3N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE"></span><span id="_CPPv2N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE"></span><span id="lunar::core::StateMachine::insert__std::type_index.std::unique_ptr:state_base:"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a54f20c1e1e75ac89a5534c1beb3bba08"></span><a class="reference internal" href="structlunar_1_1core_1_1state__base.html#_CPPv4N5lunar4core10state_baseE" title="lunar::core::state_base">state_base</a> &amp;<code class="sig-name descname">insert</code><span class="sig-paren">(</span>std::type_index <em>index</em>, std::unique_ptr&lt;<a class="reference internal" href="structlunar_1_1core_1_1state__base.html#_CPPv4N5lunar4core10state_baseE" title="lunar::core::state_base">state_base</a>&gt; <em>state</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine6insertENSt10type_indexENSt10unique_ptrI10state_baseEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Inserts a new State into the FSM by typename &amp; ptr combo. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: the typeid of the State you want to insert </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">state</span></code>: a pointer to the state you want to insert </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – the typeid of the State you want to insert </p></li>
+<li><p><strong>state</strong> – a pointer to the state you want to insert </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N5lunar4core12StateMachine3runENSt10type_indexE">
 <span id="_CPPv3N5lunar4core12StateMachine3runENSt10type_indexE"></span><span id="_CPPv2N5lunar4core12StateMachine3runENSt10type_indexE"></span><span id="lunar::core::StateMachine::run__std::type_index"></span><span class="target" id="classlunar_1_1core_1_1_state_machine_1a647f1910a6925d21f36d63e0c1510181"></span>void <code class="sig-name descname">run</code><span class="sig-paren">(</span>std::type_index <em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5lunar4core12StateMachine3runENSt10type_indexE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>starts the fsm </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: the initial state </p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>start</strong> – the initial state </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
