@@ -18,7 +18,7 @@ add_library(lunarengine
         src/core/screen.cpp
         src/core/screen.hpp
         src/core/eventbus.hpp
-        src/core/eventbus.cpp)
+        src/core/eventbus.cpp src/csharp/helper.hpp src/csharp/loader.hpp src/core/dylib_loader.hpp src/csharp/assembly.hpp src/csharp/assembly.cpp src/csharp/loader.cpp src/csharp/csharp_engine.cpp src/csharp/logger.cpp src/csharp/logger.hpp src/csharp/ordered_executor.hpp src/csharp/ordered_executor.cpp src/csharp/native_function_library.cpp src/csharp/native_function_library.hpp src/csharp/native_mem.cpp src/csharp/native_mem.hpp)
 
 #link deps
 target_include_directories(lunarengine PUBLIC src)
@@ -45,7 +45,7 @@ target_link_libraries(lunarengine PUBLIC glfw)
 find_package(spdlog CONFIG REQUIRED)
 target_link_libraries(lunarengine PUBLIC spdlog::spdlog)
 
-add_executable(tests tests/state_machine.test.cpp tests/main.cpp tests/application_framework.test.cpp tests/offscreen_render.test.cpp tests/invoke_external.hpp)
+add_executable(tests tests/state_machine.test.cpp tests/main.cpp tests/application_framework.test.cpp tests/offscreen_render.test.cpp tests/invoke_external.hpp tests/toolkit.cpp tests/toolkit.hpp tests/dylib.test.cpp tests/csharp_cpp_interop.test.cpp)
 
 # Setup coverage
 option(CODE_COVERAGE "Enable coverage reporting" OFF)
