@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>dotnetlunar_extensions</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\dotnetlunar\dotnetlunar.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
+    </ItemGroup>
+
+</Project>

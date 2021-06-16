@@ -47,7 +47,6 @@ inline tl::expected<int,std::runtime_error> invoke_external(const std::string& c
     auto ret = CreateProcessA("C:\\Windows\\System32\\cmd.exe",data.get(),NULL,NULL,TRUE,0,NULL,NULL,&si,&pi);
     if(ret == NULL)
     {
-        std::cerr << GetLastError() << std::endl;
         return tl::unexpected(std::runtime_error("Command Execution Failed"));
     }
 
