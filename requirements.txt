@@ -1,7 +1,7 @@
 blessings==1.7
 certifi==2021.5.30
 chardet==4.0.0
-curtsies==0.3.5
+curtsies==0.3.10
 cwcwidth==0.1.4
 docopt==0.6.2
 greenlet==1.0.0
